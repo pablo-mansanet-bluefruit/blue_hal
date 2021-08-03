@@ -208,8 +208,7 @@ macro_rules! gpio_inner {
             };
 
             #[allow(unused_imports)]
-            #[cfg(not(feature = "stm32f412"))]
-            #[cfg(not(feature = "stm32f446"))]
+            #[cfg(not(any(feature = "stm32f412", feature = "stm32f446")))]
             use blue_hal::stm32pac::{
                 GPIOI as GPIOi,
                 GPIOJ as GPIOj,
